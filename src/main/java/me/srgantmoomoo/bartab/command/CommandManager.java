@@ -10,6 +10,7 @@ import com.mojang.realmsclient.gui.ChatFormatting;
 
 import me.srgantmoomoo.Main;
 import me.srgantmoomoo.Reference;
+import me.srgantmoomoo.bartab.command.commands.SetCommand;
 import me.zero.alpine.listener.EventHandler;
 import me.zero.alpine.listener.Listener;
 import net.minecraft.client.Minecraft;
@@ -23,7 +24,7 @@ import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
 public class CommandManager {
 	
 	public List<Command> commands = new ArrayList<Command>();
-	public static String prefix = ",";
+	public static String prefix = "bartab";
 	public boolean commandFound = false;
 	
 	public CommandManager() {
@@ -33,7 +34,7 @@ public class CommandManager {
 	}
 	
 	public void register() {
-		commands.add(new BarTabCommand());
+		commands.add(new SetCommand());
 	}
 	
 	@EventHandler
@@ -56,7 +57,7 @@ public class CommandManager {
         		}
         	}
         	if(!commandFound) {
-        		addChatMessage(ChatFormatting.DARK_RED + "command does not exist, use " + ChatFormatting.ITALIC + prefix + "help " + ChatFormatting.RESET + "" + ChatFormatting.DARK_RED + "for help.");
+        		addChatMessage("welcome to bartab!");
         	}
         }
     });

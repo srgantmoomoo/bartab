@@ -9,12 +9,13 @@ import me.srgantmoomoo.Reference;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.util.text.TextFormatting;
 
 @Mixin({GuiMainMenu.class})
 public class MixinGuiMainMenu extends GuiScreen {
 	@Inject(method = {"drawScreen"}, at = {@At("TAIL")}, cancellable = true)
 	public void drawText(int mouseX, int mouseY, float partialTicks, CallbackInfo ci) {
 		FontRenderer fr = mc.fontRenderer;
-		fr.drawStringWithShadow(Reference.NAME + " is loaded in :D :)", 2, 2, 0xffffffff); 
+		fr.drawStringWithShadow(TextFormatting.RED + Reference.NAME + TextFormatting.RESET + " is loaded in :D :)", 2, 2, 0xffffffff); 
 	}
 }
