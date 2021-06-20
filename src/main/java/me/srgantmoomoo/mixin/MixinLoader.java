@@ -13,7 +13,7 @@ public class MixinLoader implements IFMLLoadingPlugin {
 	public MixinLoader() {
 		Main.log.info("mixins initialized");
 		MixinBootstrap.init();
-		Mixins.addConfiguration("mixins.postman.json");
+		Mixins.addConfiguration("mixins.bartab.json");
 	}
 
 	@Override

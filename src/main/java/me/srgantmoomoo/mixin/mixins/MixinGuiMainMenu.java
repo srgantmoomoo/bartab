@@ -14,7 +14,7 @@ import net.minecraft.client.gui.GuiScreen;
 public class MixinGuiMainMenu extends GuiScreen {
 	@Inject(method = {"drawScreen"}, at = {@At("TAIL")}, cancellable = true)
 	public void drawText(int mouseX, int mouseY, float partialTicks, CallbackInfo ci) {
-			FontRenderer fr = mc.fontRenderer;
-		    fr.drawStringWithShadow(Reference.NAME + " is loaded in :D :)", 2, 2, 0xffffffff); 
+		FontRenderer fr = mc.fontRenderer;
+		fr.drawStringWithShadow(Reference.NAME + " is loaded in :D :)", 2, 2, 0xffffffff); 
 	}
 }
